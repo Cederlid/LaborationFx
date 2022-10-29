@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.laborationfx.controller.HelloShapeController">
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="888.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <Canvas height="538.0" width="888.0" />
+      </AnchorPane>
+   </center>
+   <padding>
+      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+   </padding>
+   <top>
+      <HBox cache="true" prefHeight="48.0" prefWidth="874.0" spacing="10.0">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <Button fx:id="squareButton" mnemonicParsing="false" text="Square">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Button>
+         <Button fx:id="circleButton" mnemonicParsing="false" text="Circle" />
+         <Label text="Size:">
+            <font>
+               <Font name="System Bold Italic" size="14.0" />
+            </font>
+            <padding>
+               <Insets top="2.0" />
+            </padding>
+            <HBox.margin>
+               <Insets top="2.0" />
+            </HBox.margin>
+         </Label>
+         <TextField fx:id="sizeField" />
+         <Label layoutX="198.0" layoutY="10.0" text="Color:">
+            <font>
+               <Font name="System Bold Italic" size="14.0" />
+            </font>
+            <padding>
+               <Insets top="2.0" />
+            </padding>
+            <HBox.margin>
+               <Insets top="2.0" />
+            </HBox.margin>
+         </Label>
+         <ColorPicker fx:id="colorPicker" editable="true" promptText="Colors">
+            <value>
+               <Color red="0.7368420958518982" green="0.1603313833475113" blue="0.1603313833475113" />
+            </value>
+            <padding>
+               <Insets left="10.0" />
+            </padding>
+         </ColorPicker>
+      </HBox>
+   </top>
+</BorderPane>
