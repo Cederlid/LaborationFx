@@ -35,7 +35,7 @@ public class Circle extends Shape {
         double distanceX = x - getX();
         double distanceY = y - getY();
 
-        double distanceFromCenter = distanceX * distanceY + distanceY *distanceX;
+        double distanceFromCenter = distanceX * distanceY + distanceY * distanceX;
         return distanceFromCenter < radius * radius;
     }
 

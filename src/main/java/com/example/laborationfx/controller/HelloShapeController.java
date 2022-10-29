@@ -1,6 +1,6 @@
 package com.example.laborationfx.controller;
 
-import com.example.laborationfx.Shape;
+import com.example.laborationfx.ShapeModel;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;

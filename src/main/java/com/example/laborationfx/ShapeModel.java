@@ -1,4 +1,4 @@
-package com.example.laborationfx.controller;
+package com.example.laborationfx;
 
 import com.example.laborationfx.Circle;
 import javafx.scene.paint.Color;
