@@ -7,11 +7,10 @@ import javafx.scene.paint.Color;
 
 public abstract class Shape {
 
-    private Color color;
-    private double x;
-    private double y;
-    private double size;
-
+    protected Color color;
+    protected double x;
+    protected double y;
+    protected double size;
 
     public Shape(Color color, double x, double y, double size) {
         this.color = color;

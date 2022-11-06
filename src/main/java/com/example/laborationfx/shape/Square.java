@@ -26,5 +26,15 @@ public class Square extends Shape {
                 y >= topY && y <= bottomY;
     }
 
+
+    @Override
+    public String toString() {
+        return "'Square'{" +
+                "color=" + color +
+                ", x=" + x +
+                ", y=" + y +
+                ", size=" + size +
+                '}';
+    }
 }
 

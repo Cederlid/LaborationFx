@@ -26,5 +26,16 @@ public class Circle extends Shape {
         super(color, x, y, size);
     }
 
+    @Override
+    public String toString() {
+        return "'Circle'{" +
+                "color=" + color +
+                ", x=" + x +
+                ", y=" + y +
+                ", size=" + size +
+                '}';
+    }
+
+
 
 }
