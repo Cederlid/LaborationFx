@@ -58,5 +58,8 @@ public class HelloShapeController {
                 changeSizeOnSelected(newValue.doubleValue()));
         model.getColor().addListener((observableValue, color, newColor) ->
                 changeColorOnSelected(newColor));
+        selectMode.selectedProperty().addListener((observableValue, aBoolean, isSelect) -> {
+            if (!isSelect) shapeSelected = null;
+        });
     }
 }
