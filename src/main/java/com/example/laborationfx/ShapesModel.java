@@ -16,13 +16,11 @@ public class ShapesModel {
     private ObjectProperty<Color> color;
     private DoubleProperty size;
     private ShapeType selectedShapeType;
-    private Shape shapeSelected;                   // null means nothing is selected
 
     public ShapesModel() {
         shapes = new LinkedList<>();
-        shapeSelected = null;
         color = new SimpleObjectProperty<>(Color.RED);
-        size = new SimpleDoubleProperty(6.5);
+        size = new SimpleDoubleProperty(20);
         selectedShapeType = CIRCLE;
     }
 
@@ -43,16 +41,6 @@ public class ShapesModel {
                 return shape;
         }
         return null;
-    }
-
-    public void changeSize() {
-        if (shapeSelected != null)
-            shapeSelected.setSize(size.getValue());
-    }
-
-    public void changeColorOnSelected() {
-        if(shapeSelected != null)
-            shapeSelected.setColor(color.getValue());
     }
 
     public Deque<Shape> getShapes() {
@@ -77,10 +65,6 @@ public class ShapesModel {
 
     public Shape getLastUndoShape() {
         return lastUndoShape;
-    }
-
-    public Shape getShapeSelected() {
-        return shapeSelected;
     }
 
     public Property<Color> getColor() {
@@ -114,10 +98,6 @@ public class ShapesModel {
 
     public ShapeType getSelectedShapeType() {
         return selectedShapeType;
-    }
-
-    public void setShapeSelected(Shape shapeSelected) {
-        this.shapeSelected = shapeSelected;
     }
 
 

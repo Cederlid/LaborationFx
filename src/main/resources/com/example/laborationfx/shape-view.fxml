@@ -62,6 +62,11 @@
                <Insets left="10.0" />
             </padding>
          </ColorPicker>
+         <CheckBox fx:id="selectMode" mnemonicParsing="false" text="Select Mode">
+            <font>
+               <Font name="System Bold Italic" size="14.0" />
+            </font>
+         </CheckBox>
       </HBox>
    </top>
 </BorderPane>

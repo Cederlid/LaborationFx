@@ -7,15 +7,15 @@ public class Circle extends Shape {
 
     public void draw(GraphicsContext graphicsContext) {
         graphicsContext.setFill(getColor());
-        graphicsContext.fillOval(getX() - getRadius(), getY() - getRadius(), getRadius(), getRadius());
+        graphicsContext.fillOval(getX() - getRadius() , getY() - getRadius(), getSize(), getSize());
     }
 
     public boolean isInside(double x, double y) {
         double distanceX = x - getX();
         double distanceY = y - getY();
 
-        double distanceFromCenter = distanceX * distanceY + distanceY * distanceX;
-        return distanceFromCenter <= getRadius();
+        double distanceFromCenterSquared = distanceX * distanceX + distanceY * distanceY;
+        return distanceFromCenterSquared <= Math.pow(getRadius(),2);
     }
 
     public double getRadius() {
