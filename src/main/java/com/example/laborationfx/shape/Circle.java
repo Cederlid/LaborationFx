@@ -14,8 +14,8 @@ public class Circle extends Shape {
         double distanceX = x - getX();
         double distanceY = y - getY();
 
-        double distanceFromCenterSquared = distanceX * distanceX + distanceY * distanceY;
-        return distanceFromCenterSquared <= Math.pow(getRadius(),2);
+        double distanceFromCenter = Math.sqrt(distanceX * distanceX + distanceY * distanceY) ;
+        return distanceFromCenter <= getRadius();
     }
 
     public double getRadius() {

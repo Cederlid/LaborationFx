@@ -3,20 +3,13 @@ package com.example.laborationfx.controller;
 import com.example.laborationfx.ShapeType;
 import com.example.laborationfx.ShapesModel;
 import com.example.laborationfx.shape.Shape;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 
 public class HelloShapeController {
@@ -26,8 +19,11 @@ public class HelloShapeController {
     public ChoiceBox<ShapeType> shapeMenu;
     public Slider sizeChoice;
     public CheckBox selectMode;
+    public Button undoButton;
+    public Button redoButton;
+    public Button svgButton;
 
-    private Shape shapeSelected;                   // null means nothing is selected
+    private Shape shapeSelected;
 
     ObservableList<ShapeType> shapeTypesList = FXCollections.observableArrayList(ShapeType.values());
 
@@ -61,5 +57,13 @@ public class HelloShapeController {
         selectMode.selectedProperty().addListener((observableValue, aBoolean, isSelect) -> {
             if (!isSelect) shapeSelected = null;
         });
+        undoButton.setOnAction((e) -> {
+            model.undo();
+            refreshCanvas();
+        });
+        redoButton.setOnAction((event -> {
+            model.redo();
+            refreshCanvas();
+        }));
     }
 }

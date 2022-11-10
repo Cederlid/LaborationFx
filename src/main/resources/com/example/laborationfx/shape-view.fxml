@@ -67,6 +67,9 @@
                <Font name="System Bold Italic" size="14.0" />
             </font>
          </CheckBox>
+         <Button fx:id="undoButton" mnemonicParsing="false" text="Undo" />
+         <Button fx:id="redoButton" mnemonicParsing="false" text="Redo" />
+         <Button fx:id="svgButton" mnemonicParsing="false" text="Save to svg" />
       </HBox>
    </top>
 </BorderPane>
