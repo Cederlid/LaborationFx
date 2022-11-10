@@ -1,6 +1,5 @@
 package com.example.laborationfx.shape;
 
-import com.example.laborationfx.ShapeType;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 

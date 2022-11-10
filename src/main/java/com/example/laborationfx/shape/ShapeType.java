@@ -1,4 +1,4 @@
-package com.example.laborationfx;
+package com.example.laborationfx.shape;
 
 public enum ShapeType {
     CIRCLE, SQUARE

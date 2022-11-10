@@ -1,12 +1,13 @@
 package com.example.laborationfx;
 
 import com.example.laborationfx.shape.Shape;
+import com.example.laborationfx.shape.ShapeType;
 import javafx.beans.property.*;
 import javafx.scene.paint.Color;
 
 import java.util.*;
 
-import static com.example.laborationfx.ShapeType.CIRCLE;
+import static com.example.laborationfx.shape.ShapeType.CIRCLE;
 
 public class ShapesModel {
 

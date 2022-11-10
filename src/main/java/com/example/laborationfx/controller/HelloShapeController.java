@@ -1,6 +1,7 @@
 package com.example.laborationfx.controller;
 
-import com.example.laborationfx.ShapeType;
+import com.example.laborationfx.Svg;
+import com.example.laborationfx.shape.ShapeType;
 import com.example.laborationfx.ShapesModel;
 import com.example.laborationfx.shape.Shape;
 import javafx.collections.FXCollections;
@@ -10,7 +11,12 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import java.io.File;
 
 public class HelloShapeController {
 
@@ -22,7 +28,9 @@ public class HelloShapeController {
     public Button undoButton;
     public Button redoButton;
     public Button svgButton;
+    public AnchorPane anchorPane;
 
+    FileChooser fileChooser = new FileChooser();
     private Shape shapeSelected;
 
     ObservableList<ShapeType> shapeTypesList = FXCollections.observableArrayList(ShapeType.values());
@@ -64,6 +72,19 @@ public class HelloShapeController {
         redoButton.setOnAction((event -> {
             model.redo();
             refreshCanvas();
+        }));
+        svgButton.setOnAction((event -> {
+            FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("SVG files(*.svg)","*.svg");
+            fileChooser.getExtensionFilters().add(extensionFilter);
+            fileChooser.setTitle("Export file");
+            Stage stage =(Stage) anchorPane.getScene().getWindow();
+            File file = fileChooser.showSaveDialog(stage);
+
+            if (file != null){
+                var svg = new Svg();
+                svg.saveToFile(model.getShapes(),file);
+            }
+
         }));
     }
 }
