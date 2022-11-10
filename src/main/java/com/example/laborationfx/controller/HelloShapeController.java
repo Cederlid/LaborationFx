@@ -58,6 +58,7 @@ public class HelloShapeController {
         colorPicker.valueProperty().bindBidirectional(model.getColor());
         sizeChoice.valueProperty().bindBidirectional(model.getSize());
         shapeMenu.setItems(shapeTypesList);
+        shapeMenu.setValue(model.getSelectedShapeType());
         model.getSize().addListener((observableValue, old, newValue) ->
                 changeSizeOnSelected(newValue.doubleValue()));
         model.getColor().addListener((observableValue, color, newColor) ->
@@ -87,4 +88,27 @@ public class HelloShapeController {
 
         }));
     }
+
+    public void canvasClicked(MouseEvent mouseEvent) {
+        if (!selectMode.isSelected()) {
+            Shape shape = Shape.createShape(shapeMenu.getValue(), model.getColor().getValue(), mouseEvent.getX(), mouseEvent.getY(), model.getSize().getValue());
+            model.addShape(shape);
+            model.printShapeList();
+            GraphicsContext gc = canvas.getGraphicsContext2D();
+            gc.setFill(shape.getColor());
+            shape.draw(gc);
+        } else {
+            shapeSelected = model.findShapeAt(mouseEvent.getX(), mouseEvent.getY());
+            System.out.println("new selected" + shapeSelected);
+        }
+
+    }
+
+    private void refreshCanvas() {
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        model.getShapes().forEach(shape -> shape.draw(gc));
+    }
+
+
 }

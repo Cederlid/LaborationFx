@@ -18,6 +18,14 @@ public class Circle extends Shape {
         return distanceFromCenter <= getRadius();
     }
 
+    @Override
+    public String toSvg() {
+        return "<circle " + "cx=\"" + getX() + "\" " +
+                "cy=\"" + getY() + "\" " +
+                "r=\"" + getRadius() + "\" " +
+                "fill=\"" + toWebColor() + "\"/>";
+    }
+
     public double getRadius() {
         return getSize() / 2;
     }

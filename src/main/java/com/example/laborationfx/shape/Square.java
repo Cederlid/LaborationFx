@@ -26,6 +26,15 @@ public class Square extends Shape {
                 y >= topY && y <= bottomY;
     }
 
+    @Override
+    public String toSvg() {
+        return "<rect x=\"" + getX() + "\" " +
+                "y=\"" + getY() + "\" " +
+                "width=\"" + getSize() + "\" " +
+                "height=\"" + getSize() + "\" " +
+                "fill=\"" + toWebColor() + "\"/>";
+    }
+
 
     @Override
     public String toString() {

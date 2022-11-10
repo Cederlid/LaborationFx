@@ -70,4 +70,12 @@ public abstract class Shape {
     }
 
 
+    public abstract String toSvg();
+
+    protected String toWebColor() {
+        return String.format("#%02X%02X%02X",
+                (int) (color.getRed() * 255),
+                (int) (color.getGreen() * 255),
+                (int) (color.getBlue() * 255));
+    }
 }
