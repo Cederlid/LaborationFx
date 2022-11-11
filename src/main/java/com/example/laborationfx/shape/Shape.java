@@ -18,13 +18,6 @@ public abstract class Shape {
         this.size = size;
     }
 
-    public Shape(Shape shape) {
-        color = shape.color;
-        x = shape.x;
-        y = shape.y;
-        size = shape.size;
-    }
-
     public static Shape createShape(ShapeType type, Color color, double x, double y, double size) {
         return switch (type) {
             case CIRCLE -> new Circle(color, x, y, size);
@@ -53,14 +46,6 @@ public abstract class Shape {
         return y;
     }
 
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
-
     public double getSize() {
         return size;
     }
@@ -68,7 +53,6 @@ public abstract class Shape {
     public void setSize(double size) {
         this.size = size;
     }
-
 
     public abstract String toSvg();
 

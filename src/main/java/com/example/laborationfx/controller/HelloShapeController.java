@@ -75,15 +75,15 @@ public class HelloShapeController {
             refreshCanvas();
         }));
         svgButton.setOnAction((event -> {
-            FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("SVG files(*.svg)","*.svg");
+            FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("SVG files(*.svg)", "*.svg");
             fileChooser.getExtensionFilters().add(extensionFilter);
             fileChooser.setTitle("Export file");
-            Stage stage =(Stage) anchorPane.getScene().getWindow();
+            Stage stage = (Stage) anchorPane.getScene().getWindow();
             File file = fileChooser.showSaveDialog(stage);
 
-            if (file != null){
+            if (file != null) {
                 var svg = new Svg();
-                svg.saveToFile(model.getShapes(),file);
+                svg.saveToFile(model.getShapes(), file);
             }
 
         }));

@@ -15,7 +15,6 @@ public class Square extends Shape {
         graphicsContext.fillRect(getX(), getY(), getSize(), getSize());
     }
 
-
     public boolean isInside(double x, double y) {
         double leftX = getX();
         double rightX = getX() + getSize();

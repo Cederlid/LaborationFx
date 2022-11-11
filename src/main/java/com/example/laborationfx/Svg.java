@@ -1,14 +1,11 @@
 package com.example.laborationfx;
 
 import com.example.laborationfx.shape.Shape;
-import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.stream.Stream;
 
 public class Svg {
@@ -22,7 +19,7 @@ public class Svg {
         var lastLine = Stream.of("</svg>");
         var allLines = Stream.concat(Stream.concat(header, lines), lastLine);
         try {
-            Files.write(file.toPath(),allLines.toList());
+            Files.write(file.toPath(), allLines.toList());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
