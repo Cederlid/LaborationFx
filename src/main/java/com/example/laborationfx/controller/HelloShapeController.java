@@ -21,7 +21,6 @@ import java.io.File;
 public class HelloShapeController {
 
     public Canvas canvas;
-
     public ChoiceBox<ShapeType> shapeMenu;
     public Slider sizeChoice;
     public CheckBox selectMode;

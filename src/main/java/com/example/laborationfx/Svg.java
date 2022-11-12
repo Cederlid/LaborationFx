@@ -14,8 +14,6 @@ public class Svg {
         var header = Stream.of("<svg width=\"800.0\" height=\"600.0\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">");
         var lines = shapes.stream()
                 .map(Shape::toSvg);
-
-
         var lastLine = Stream.of("</svg>");
         var allLines = Stream.concat(Stream.concat(header, lines), lastLine);
         try {
