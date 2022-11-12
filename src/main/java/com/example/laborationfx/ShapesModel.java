@@ -25,10 +25,6 @@ public class ShapesModel {
         selectedShapeType = CIRCLE;
     }
 
-    public void setColor(Color color) {
-        this.color.set(color);
-    }
-
     public void addShape(Shape shape) {
         shapes.add(shape);
 
